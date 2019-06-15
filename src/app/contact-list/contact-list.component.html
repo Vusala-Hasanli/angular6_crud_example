@@ -1,0 +1,23 @@
+<div class="container-fluid text-center pb-5">
+  <button class="btn-info" style='float: center' (click)="add()">Add</button>
+  <br><br><br>
+
+  <div class="row">
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Phone Number</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let contact of contacts">
+        <td>{{contact.name}}</td>
+        <td>{{contact.surname}}</td>
+        <td>{{contact.phoneNumber}}</td>
+        <td><button class="btn-info" (click)="edit(contact)">Edit</button></td>
+        <td><button class="btn-info" (click)="delete(contact)">Delete</button></td>
+      </tr>
+    </table>
+  </div>
+</div>

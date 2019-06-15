@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h4 class="modal-title">Create contact</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Close')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  First name: <input type="text" [(ngModel)]="contact.name" name="name"><br>
+  Last name: <input type="text" [(ngModel)]="contact.surname" name="surname"><br>
+  Phone Number: <input type="text" [(ngModel)]="contact.phoneNumber" name="phoneNumber" maxlength="10" (keypress)=_keyPress($event)><br>
+</div>
+<div class="modal-footer">
+  <label class='error' *ngIf="!isValid">Please fill out all fields</label>
+  <br>
+  <button type="button" class="btn btn-outline-dark" (click)="add()" *ngIf="!isEditable">Add</button>
+  <button type="button" class="btn btn-outline-dark" (click)="edit()" *ngIf="isEditable">Edit</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close')">Cancel</button>
+</div>
+
